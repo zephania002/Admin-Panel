@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sales Report - Mwalimu Automobile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/sales.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="sales-report-container">
+        <header class="sales-report-header">
+            <h1><i class='bx bx-line-chart'></i> Sales Report</h1>
+            <a href="admin.html" class="back-to-dashboard"><i class='bx bx-arrow-left'></i> Back to Dashboard</a>
+            <div class="report-controls">
+                <div class="date-range">
+                    <label for="start-date">Start Date:</label>
+                    <input type="date" id="start-date">
+                    <label for="end-date">End Date:</label>
+                    <input type="date" id="end-date">
+                    <button class="btn primary-btn" id="filter-sales">Filter</button>
+                </div>
+                <div class="refresh-button">
+                    <button class="btn secondary-btn" id="refresh-sales"><i class='bx bx-refresh'></i> Refresh</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="sales-report-content">
+            <div class="report-overview animated-grid">
+                <div class="overview-card total-revenue">
+                    <div class="card-icon"><i class='bx bx-dollar-circle'></i></div>
+                    <div class="card-info">
+                        <h3 class="card-title">Total Revenue</h3>
+                        <span class="card-value">$<span id="total-revenue-value">0.00</span></span>
+                        <span class="card-trend up"><i class='bx bx-trending-up'></i> +5.2% (last month)</span>
+                    </div>
+                </div>
+
+                <div class="overview-card total-orders">
+                    <div class="card-icon"><i class='bx bx-cart-alt'></i></div>
+                    <div class="card-info">
+                        <h3 class="card-title">Total Orders</h3>
+                        <span class="card-value"><span id="total-orders-value">0</span></span>
+                        <span class="card-trend down"><i class='bx bx-trending-down'></i> -1.8% (last month)</span>
+                    </div>
+                </div>
+
+                <div class="overview-card average-order-value">
+                    <div class="card-icon"><i class='bx bx-wallet'></i></div>
+                    <div class="card-info">
+                        <h3 class="card-title">Avg. Order Value</h3>
+                        <span class="card-value">$<span id="average-order-value">0.00</span></span>
+                        <span class="card-trend stable"><i class='bx bx-minus'></i> 0.0% (last month)</span>
+                    </div>
+                </div>
+
+                <div class="overview-card new-customers">
+                    <div class="card-icon"><i class='bx bx-user-plus'></i></div>
+                    <div class="card-info">
+                        <h3 class="card-title">New Customers</h3>
+                        <span class="card-value"><span id="new-customers-value">0</span></span>
+                        <span class="card-trend up"><i class='bx bx-trending-up'></i> +12.5% (last month)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="report-details">
+                <div class="sales-chart-container animated-element" data-animation="fade-in-slide-up">
+                    <h3>Sales Over Time</h3>
+                    <canvas id="sales-chart"></canvas>
+                </div>
+
+                <div class="recent-sales animated-element" data-animation="fade-in-slide-left" data-delay="0.2s">
+                    <h3>Recent Sales</h3>
+                    <div class="table-responsive">
+                        <table class="sales-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-sales-list">
+                                <tr><td colspan="5" class="text-center">No recent sales data.</td></tr>
+                            </tbody>
+                        </table>
+                        <button class="btn secondary-btn load-more-sales">Load More</button>
+                    </div>
+                </div>
+
+                <div class="product-performance animated-element" data-animation="fade-in-slide-right" data-delay="0.4s">
+                    <h3>Top Performing Products</h3>
+                    <ol id="top-products-list">
+                        <li>No product performance data.</li>
+                    </ol>
+                </div>
+            </div>
+        </main>
+
+        <footer class="sales-report-footer">
+            <p>&copy; 2025 Mwalimu Automobile Admin</p>
+        </footer>
+    </div>
+</body>
+</html>

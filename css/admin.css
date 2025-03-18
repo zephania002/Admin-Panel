@@ -121,9 +121,9 @@ body {
 }
 
 .sidebar .logo img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    width: 250px;
+    height: 60px;
+    border-radius: 0;
     object-fit: cover;
     margin-bottom: 10px;
 }
@@ -814,4 +814,33 @@ body {
     .dashboard-widgets {
         grid-template-columns: 1fr;
     }
+}
+
+/* Example styling for the sales report link */
+#sales-reports ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#sales-reports li {
+    margin-bottom: 8px;
+}
+
+.report-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color, #007bff);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.report-link i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.report-link:hover {
+    color: darken(var(--primary-color, #007bff), 15%);
 }
