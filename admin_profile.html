@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile - Mwalimu Automobile</title>
+    <link rel="stylesheet" href="css/admin_profile.css"> <link rel="stylesheet" href="css/admin.css"> <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="admin-profile-container">
+        <header class="admin-profile-header">
+            <h1>Admin Profile</h1>
+            <a href="admin.html" class="back-to-dashboard"><i class='bx bx-arrow-left'></i> Back to Dashboard</a>
+        </header>
+
+        <section class="profile-details">
+            <h2>Personal Information</h2>
+            <div class="detail-item">
+                <label>Admin ID:</label>
+                <span id="adminId"></span>
+            </div>
+            <div class="detail-item">
+                <label>Username:</label>
+                <span id="username"></span>
+            </div>
+            <div class="detail-item">
+                <label>Email:</label>
+                <span id="email"></span>
+            </div>
+            <div class="detail-item">
+                <label>Last Login:</label>
+                <span id="lastLogin"></span>
+            </div>
+            </section>
+
+       
+        <section class="activity-log">
+            <h2>Recent Activity</h2>
+            <ul id="activityLogList">
+                <li>No recent activity to display.</li>
+            </ul>
+            <button id="loadMoreActivity" class="btn secondary-btn" style="display: none;">Load More</button>
+        </section>
+
+        <footer class="admin-profile-footer">
+            <p>&copy; 2025 Mwalimu Automobile Admin</p>
+        </footer>
+    </div>
+
+    <script src="js/admin_profile.js"></script> </body>
+</html>

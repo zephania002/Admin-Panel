@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings - Mwalimu Automobile</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/admin_settings.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="settings-container">
+        <header class="settings-header">
+            <h1><i class='bx bx-cog bx-spin'></i> Admin Settings</h1>
+            <a href="admin.html" class="back-to-dashboard"><i class='bx bx-arrow-left'></i> Back to Dashboard</a>
+        </header>
+
+        <main class="settings-content">
+            <section class="general-settings animated-section" data-animation="fade-in-slide-down">
+                <h2><i class='bx bx-wrench'></i> General Settings</h2>
+                <div class="setting-group">
+                    <label for="siteTheme">Site Theme:</label>
+                    <div class="select-wrapper">
+                        <select id="siteTheme">
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                            <option value="system">System Default</option>
+                        </select>
+                        <i class='bx bxs-chevron-down'></i>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label for="notificationSound">Notification Sound:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="notificationSound">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-group">
+                    <label for="defaultLanguage">Default Language:</label>
+                    <div class="select-wrapper">
+                        <select id="defaultLanguage">
+                            <option value="en">English</option>
+                            <option value="fr">French</option>
+                            <option value="es">Spanish</option>
+                            <option value="sw">Swahili</option>
+                            </select>
+                        <i class='bx bxs-chevron-down'></i>
+                    </div>
+                </div>
+                <button class="btn primary-btn save-settings-btn"><i class='bx bx-save'></i> Save General Settings</button>
+                <div id="generalSettingsMessage" class="form-message"></div>
+            </section>
+
+            <section class="security-settings animated-section" data-animation="fade-in-slide-left" data-delay="0.2s">
+                <h2><i class='bx bxs-shield-alt'></i> Security Settings</h2>
+                <div class="setting-group">
+                    <h3>Password Management</h3>
+                    <button class="btn secondary-btn" id="openChangePasswordModal"><i class='bx bx-lock-alt'></i> Change Password</button>
+                </div>
+                <div class="setting-group">
+                    <label for="twoFactorAuth">Two-Factor Authentication:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="twoFactorAuth">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="setting-description">Enhance your account security.</span>
+                </div>
+                <button class="btn primary-btn save-settings-btn"><i class='bx bx-save'></i> Save Security Settings</button>
+                <div id="securitySettingsMessage" class="form-message"></div>
+            </section>
+
+            <section class="notifications-settings animated-section" data-animation="fade-in-slide-right" data-delay="0.4s">
+                <h2><i class='bx bx-bell'></i> Notifications</h2>
+                <div class="setting-group">
+                    <label for="emailNotifications">Email Notifications:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="emailNotifications" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="setting-description">Receive important updates via email.</span>
+                </div>
+                <div class="setting-group">
+                    <label for="smsNotifications">SMS Notifications:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="smsNotifications">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="setting-description">Get urgent alerts on your phone.</span>
+                </div>
+                <button class="btn primary-btn save-settings-btn"><i class='bx bx-save'></i> Save Notification Settings</button>
+                <div id="notificationSettingsMessage" class="form-message"></div>
+            </section>
+
+            </main>
+
+        <footer class="settings-footer">
+            <p>&copy; 2025 Mwalimu Automobile Admin</p>
+        </footer>
+
+        <div id="changePasswordModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class='bx bx-x'></i></span>
+                <h3>Change Password</h3>
+                <form id="changePasswordFormModal">
+                    <div class="form-group">
+                        <label for="currentPasswordModal">Current Password:</label>
+                        <input type="password" id="currentPasswordModal" name="currentPasswordModal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPasswordModal">New Password:</label>
+                        <input type="password" id="newPasswordModal" name="newPasswordModal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmNewPasswordModal">Confirm New Password:</label>
+                        <input type="password" id="confirmNewPasswordModal" name="confirmNewPasswordModal" required>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Change Password</button>
+                    <div id="passwordChangeMessageModal" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/admin_settings.js"></script>
+</body>
+</html>
